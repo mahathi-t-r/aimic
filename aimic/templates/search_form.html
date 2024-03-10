@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Tracks</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('https://cdn.pixabay.com/photo/2016/11/18/15/01/piano-1835179_1280.jpg'); /* Replace 'music_background.jpg' with your actual image path */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Black box shadow */
+}
+
+
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #808080; /* Grey background color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #696969; /* Darker grey on hover */
+}
+
+    </style>
+</head>
+<body>
+    <form action="{% url 'search_tracks' %}" method="GET">
+        <input type="text" name="q" placeholder="Search for tracks">
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

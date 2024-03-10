@@ -1,0 +1,186 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Profile</title>
+  <style>
+    /* Inline CSS */
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+    }
+
+    .sidebar {
+      background-color: #000;
+      width: 240px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      color: #b3b3b3;
+      font-size: 14px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      padding: 5px 15px;
+      margin: 10px 0;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #282828;
+    }
+
+    .sidebar-section {
+      background: #181818;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 9px;
+      overflow: hidden;
+    }
+
+    .sidebar-link {
+      color: #b3b3b3;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    .sidebar-link:hover,
+    .sidebar-link.active {
+      color: #fff;
+    }
+
+    .sidebar-link-icon {
+      margin-right: 15px;
+      display: inline-block;
+      width: 24px; /* Adjust size as needed */
+      text-align: center;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #2a2a2a;
+      border-radius: 20px;
+      padding: 10px;
+      margin: 0 0px;
+    }
+
+    .search-bar input[type="search"] {
+      flex-grow: 1;
+      background-color: transparent;
+      border: none;
+      padding-left: 20px;
+      padding-right: 20px;
+      color: #fff;
+      font-size: 18px; /* Increase font size for bigger appearance */
+    }
+
+    .search-bar button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .artist-header {
+      background-image: url('https://cdn.punchng.com/wp-content/uploads/2023/05/20120536/Rema.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Spotify Logo -->
+    <div class="logo-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Aimic-Photoroom.png-Photoroom.png" alt="Spotify Logo" style="width: 100%; height: auto; padding: 20px; box-sizing: border-box;">
+    </div>
+
+    <!-- Top section of the sidebar -->
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-link active">
+        <span class="sidebar-link-icon">🏠</span>
+        Home
+      </a>
+      <a href="#" class="sidebar-link">
+        <span class="sidebar-link-icon">🔍</span>
+        Search
+      </a>
+      <a href="#" class="sidebar-link">
+        <span class="sidebar-link-icon">🎵</span>
+        Your Library
+      </a>
+    </div>
+
+    <!-- Bottom section of the sidebar -->
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-link active">
+        <span class="sidebar-link-icon">💜</span>
+        <span class="sidebar-link-text">Liked Songs</span>
+      </a>
+      <!-- Repeat for each item -->
+      <a href="#" class="sidebar-link">
+        <span class="sidebar-link-icon">🎶</span>
+        <span class="sidebar-link-text">Experience</span>
+      </a>
+      <a href="#" class="sidebar-link">
+        <span class="sidebar-link-icon">🎹</span>
+        <span class="sidebar-link-text">Ayra Starr</span>
+      </a>
+      <!-- ... more links ... -->
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-1">
+    <br>
+    <br>
+    <header class="header-container">
+      <div class="search-bar" style="width: 390px;">
+        <input type="search" placeholder="What do you want to listen to?" aria-label="Search">
+        <button type="submit" aria-label="Search">🔍</button>
+      </div>
+    </header>
+
+    <!-- Popular Tracks Section -->
+    <div class="p-5">
+      <br>
+      <h2 class="text-2xl font-bold mb-4">Search Results</h2>
+      <div class="divide-y divide-gray-800">
+        <!-- Single Track Row -->
+        <div class="flex justify-between items-center py-3">
+          <div class="flex items-center space-x-4">
+            <img src="https://i.scdn.co/image/ab67616d00001e02963265801aa5c9740ad159b7" alt="Song Image" class="w-12 h-12">
+            <div>
+              <p class="text-base font-medium">Calm Down</p>
+              <p class="text-xs text-gray-400">Rema, Selena Gomez</p>
+            </div>
+          </div>
+          <div class="text-gray-400">1,182,474,314</div>
+          <div class="text-gray-400">3:59</div>
+        </div>
+        <!-- Repeat for other tracks -->
+      </div>
+      <!-- <a href="#" class="text-green-500 text-sm">See more</a> -->
+    </div>
+  </div>
+
+</body>
+</html>

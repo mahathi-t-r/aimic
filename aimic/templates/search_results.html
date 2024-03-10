@@ -1,0 +1,82 @@
+<!-- music/templates/music/search_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+}
+
+h1 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+li {
+    margin-bottom: 20px;
+    border: 1px solid #fff; /* White border */
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+strong {
+    font-size: 1em; /* Adjusted font size */
+}
+
+span {
+    font-size: 0.8em; /* Reduced font size */
+}
+
+audio {
+    margin-top: 10px;
+}
+
+       </style>
+    <h1>Search Results</h1>
+    <ul>
+    {% for track in tracks %}
+        <li>
+            <img src="{{ track.album_artwork }}" alt="Album Artwork">
+            <div>
+                <strong>{{ track.name }}</strong><br>
+                <span>By: {{ track.artists|join:", " }}<br>
+                Album: {{ track.album }}</span>
+                {% if track.preview_url %}
+                    <audio controls>
+                        <source src="{{ track.preview_url }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                {% else %}
+                    No preview available
+                {% endif %}
+            </div>
+        </li>
+    {% empty %}
+        <li>No tracks found</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
